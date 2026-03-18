@@ -1,20 +1,17 @@
-import express from 'express';
-const router = express.Router();
-
-router.get("/", (req, res) => {
+const getNotes = (req, res) => {
     res.status(200).json({message: "Hello from the notes router!"});
-});
+};
 
-router.post("/", (req, res) => {
+const createNote = (req, res) => {
     res.status(201).json({message: "Note created!"});
-});
+};
 
-router.put("/:id", (req, res) => {
+const updateNote = (req, res) => {
     res.status(200).json({message: `Note with id ${req.params.id} updated!`});
-});
+};
 
-router.delete("/:id", (req, res) => {
+const deleteNote = (req, res) => {
     res.status(200).json({message: `Note with id ${req.params.id} deleted!`});
-});
+};
 
-export default router;
+export { getNotes, createNote, updateNote, deleteNote };
